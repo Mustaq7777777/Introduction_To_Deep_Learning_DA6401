@@ -6,6 +6,10 @@ This repository contains a Python script (`train.py`) that implements a configur
 
 Check out the detailed experiment report on [WandB](https://api.wandb.ai/links/cs24m045-indian-institute-of-technology-madras/dhrf1snl)
 
+## Repository
+
+The complete code and documentation for this project can be found on the [GitHub Repository](https://github.com/Mustaq7777777/Introduction_To_Deep_Learning_DA6401/tree/main/Assignment1).
+
 
 ## Table of Contents
 - Overview
