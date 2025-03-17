@@ -2,6 +2,11 @@
 
 This repository contains a Python script (`train.py`) that implements a configurable feedforward neural network for classifying images from the MNIST and Fashion MNIST datasets. The network supports multiple optimizers (SGD, Momentum, NAG, RMSProp, Adam, Nadam) and various hyperparameter settings. All training progress and performance metrics are logged to Weights & Biases (W&B), allowing for detailed experiment tracking and visualization.
 
+## WandB Report
+
+Check out the detailed experiment report on [WandB](https://api.wandb.ai/links/cs24m045-indian-institute-of-technology-madras/dhrf1snl)
+
+
 ## Table of Contents
 - Overview
 - Features
