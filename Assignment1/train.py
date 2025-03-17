@@ -283,9 +283,12 @@ def SGD(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes,
         wandb.log({"epoch " : epoch})
 
         # Evaluate and log performance on test, validation, and training sets.
-        evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+        train_accuracy, train_loss = evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        val_accuracy, val_loss = evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        test_accuracy = evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+
+        # Print epoch details
+        print("Epoch:", epoch, "Train Accuracy:", train_accuracy, "Train Loss:", train_loss, "Val Accuracy:", val_accuracy, "Val Loss:", val_loss)
         
 
 
@@ -324,9 +327,12 @@ def momentum_gd(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output
         wandb.log({"epoch " : epoch})
         
         # Evaluate and log performance on test, validation, and training sets.
-        evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+        train_accuracy, train_loss = evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        val_accuracy, val_loss = evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        test_accuracy = evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+
+        # Print epoch details
+        print("Epoch:", epoch, "Train Accuracy:", train_accuracy, "Train Loss:", train_loss, "Val Accuracy:", val_accuracy, "Val Loss:", val_loss)
 
 
 
@@ -369,9 +375,12 @@ def nesterov_gd(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output
         wandb.log({"epoch " : epoch})
         
         # Evaluate and log performance on test, validation, and training sets.
-        evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+        train_accuracy, train_loss = evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        val_accuracy, val_loss = evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        test_accuracy = evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+
+        # Print epoch details
+        print("Epoch:", epoch, "Train Accuracy:", train_accuracy, "Train Loss:", train_loss, "Val Accuracy:", val_accuracy, "Val Loss:", val_loss)
 
 
 # RMSProp optimizer.
@@ -411,9 +420,12 @@ def rmsprop(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nod
         wandb.log({"epoch " : epoch})
         
         # Evaluate and log performance on test, validation, and training sets.
-        evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+        train_accuracy, train_loss = evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        val_accuracy, val_loss = evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        test_accuracy = evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+
+        # Print epoch details
+        print("Epoch:", epoch, "Train Accuracy:", train_accuracy, "Train Loss:", train_loss, "Val Accuracy:", val_accuracy, "Val Loss:", val_loss)
 
 
 # Adam optimizer.
@@ -468,9 +480,12 @@ def adam(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes,
         wandb.log({"epoch " : epoch})
         
         # Evaluate and log performance on test, validation, and training sets.
-        evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+        train_accuracy, train_loss = evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        val_accuracy, val_loss = evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        test_accuracy = evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+
+        # Print epoch details
+        print("Epoch:", epoch, "Train Accuracy:", train_accuracy, "Train Loss:", train_loss, "Val Accuracy:", val_accuracy, "Val Loss:", val_loss)
 
 
 # Nadam optimizer.
@@ -525,9 +540,12 @@ def nadam(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes
         wandb.log({"epoch " : epoch})
         
         # Evaluate and log performance on test, validation, and training sets.
-        evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
-        evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+        train_accuracy, train_loss = evaluate_performance_train(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        val_accuracy, val_loss = evaluate_performance_validity(x_train, y_train, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func, loss_func)
+        test_accuracy = evaluate_performance_test(x_test, y_test, hiddenlayers, hiddennodes, input_nodes, output_nodes, W, b, activation_func)
+
+        # Print epoch details
+        print("Epoch:", epoch, "Train Accuracy:", train_accuracy, "Train Loss:", train_loss, "Val Accuracy:", val_accuracy, "Val Loss:", val_loss)
 
 
 ##########################
