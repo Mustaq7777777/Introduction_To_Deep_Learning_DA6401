@@ -92,7 +92,7 @@ def g(z, act_func):
         return sigmoid(z)
     elif act_func == "tanh":
         return tanh(z)
-    elif act_func == "ReLu":
+    elif act_func == "ReLU":
         return relu(z)
 
 # Applies the derivative of the selected activation function.
@@ -101,7 +101,7 @@ def g_derivative(z, act_func):
         return d_sigmoid(z)
     elif act_func == "tanh":
         return d_tanh(z)
-    elif act_func == "ReLu":
+    elif act_func == "ReLU":
         return d_relu(z)
 
 # Computes the output layer activation using softmax.
@@ -623,7 +623,7 @@ def main():
     parser.add_argument('-sz', '--hidden_size', type=int, default=64,
                         help='Size of each hidden layer')
     parser.add_argument('-a', '--activation', type=str,
-                        choices=['sigmoid', 'tanh', 'ReLu'], default='ReLu',
+                        choices=['sigmoid', 'tanh', 'ReLU'], default='ReLU',
                         help='Activation function')
     parser.add_argument('-m', '--momentum', type=float, default=0.9,
                         help='Momentum value for momentum-based optimizers')
