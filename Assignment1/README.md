@@ -97,4 +97,5 @@ python train.py -wp "DA6401-Assignment1" -we "your_entity" -d fashion_mnist -e 1
 ```bash
 python train.py -wp "DA6401-Assignment1" -we "your_entity" -d mnist -e 10 -b 64 -l mean_squared_error -o momentum -lr 0.001 -w_d 0.0 -w_i random -nhl 5 -sz 64 -a relu -m 0.9 -beta1 0.9 -beta2 0.999 -eps 1e-8 -beta 0.9
 ```
-
+## Note
+Use "ReLU" instead of "relu" when using commands as specified in the report
